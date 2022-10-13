@@ -32,4 +32,29 @@ export class StudentyService {
       password: undefined
     }
   }
+
+  async findAll() {
+    const students = await this.prisma.studenty.findMany({
+      select: {
+        name: true,
+        email: true,
+        cpf: true,
+        city: true,
+        state: true,
+        series: true,
+        shift: true,
+        date_birth: true,
+        phone: true,
+        createdAt: true,
+        responsible_name: true,
+        responsible_email: true,
+        responsible_phone: true,
+      },
+      orderBy: {
+        id: 'desc'
+      }
+    });
+
+    return students;
+  }
 }
