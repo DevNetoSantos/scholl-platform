@@ -17,16 +17,16 @@ model Studenty {
   name              String
   email             String   @unique
   password          String
-  cpf               Int      @unique
+  cpf               String   @unique
   date_birth        String
-  phone             Int
+  phone             String
   city              String
   state             String
   series            String
   shift             String
   responsible_name  String
   responsible_email String   @unique
-  responsible_phone Int
+  responsible_phone String
   role              Role     @default(USER)
 
   @@map("studentys")

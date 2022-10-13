@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, MaxLength, MinLength } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsNumber, MaxLength, MinLength } from 'class-validator';
 
 export class CreateStudentyDto {
 
@@ -16,14 +16,14 @@ export class CreateStudentyDto {
 
   @MaxLength(11)
   @IsNotEmpty()
-  cpf: number;
+  cpf: string;
 
   @IsNotEmpty()
   date_birth: string;
 
   @MaxLength(11)
   @IsNotEmpty()
-  phone: number;
+  phone: string;
 
   @MinLength(3)
   @MaxLength(100)
@@ -53,5 +53,5 @@ export class CreateStudentyDto {
   
   @MaxLength(11)
   @IsNotEmpty()
-  responsible_phone: number;
+  responsible_phone: string;
 }
