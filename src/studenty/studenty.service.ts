@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/database/prisma.service';
 import { CreateStudentyDto } from './dto/create-studenty.dto';
 import * as bcrypt from 'bcrypt';
+import { UpdateStudentyDto } from './dto/update-studenty.dto';
 
 @Injectable()
 export class StudentyService {
@@ -25,12 +26,9 @@ export class StudentyService {
       throw new Error ('Student already exist')
     }
 
-    const creatStudenty = await this.prisma.studenty.create({data})
+    await this.prisma.studenty.create({data})
 
-    return {
-      ...creatStudenty,
-      password: undefined
-    }
+    return {messege: 'studenty added successfully'}
   }
 
   async findAll() {
@@ -56,5 +54,50 @@ export class StudentyService {
     });
 
     return students;
+  }
+
+  async findOne(id: number) {
+    const studenty = await this.prisma.studenty.findUnique({where: {id}})
+
+    if(!studenty) {
+      throw new Error ('Student not exist')
+    }
+
+    return {
+      ...studenty,
+      password: undefined
+    }
+  }
+
+  async update(id: number, updateStudentyDto: UpdateStudentyDto) {
+    const studenty = await this.prisma.studenty.findUnique({where: {id}})
+
+    const data = {
+      ...updateStudentyDto,
+      password: await bcrypt.hash(updateStudentyDto.password, 10)
+    }
+
+    if(!studenty) {
+      throw new Error ('Student not exist')
+    }
+
+    const updateStudenty = await this.prisma.studenty.update({where: {id}, data})
+
+    return {
+      ...updateStudenty,
+      password: undefined
+    }
+  }
+
+  async remove(id: number) {
+    const studentExits = await this.prisma.studenty.findUnique({where: {id}})
+
+    if(!studentExits) {
+      throw new Error ('Student not exist')
+    }
+
+    await this.prisma.studenty.delete({where: {id}})
+
+    return {messege: 'successfully deleted'}
   }
 }
