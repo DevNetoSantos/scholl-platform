@@ -29,4 +29,19 @@ export class TeacherService {
 
     return {messege: 'Teacher added successfully'}
   }
+
+  async findAll() {
+    const teachers = await this.prisma.teacher.findMany({
+      select: {
+        createdAt: true,
+        name: true,
+        email: true,
+        cpf: true,
+        speacialization: true,
+        city: true,
+        state: true,
+      }
+    });
+    return teachers;
+  }
 }
