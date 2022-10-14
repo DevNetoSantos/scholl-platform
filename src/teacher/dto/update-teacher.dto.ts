@@ -6,5 +6,5 @@ export class UpdateTeacherDto {
   cpf: string;
   city: string;
   state: string;
-  seacialization: string
+  speacialization: string
 }
