@@ -33,16 +33,17 @@ model Studenty {
 }
 
 model Teacher {
-  id             Int      @id @default(autoincrement())
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
-  name           String
-  email          String
-  cpf            String
-  city           String
-  state          String
-  seacialization String
-  role           Role     @default(ADMIN)
+  id              Int      @id @default(autoincrement())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  name            String
+  email           String
+  password        String
+  cpf             String
+  city            String
+  state           String
+  speacialization String
+  role            Role     @default(ADMIN)
 
   @@map("teachers")
 }
