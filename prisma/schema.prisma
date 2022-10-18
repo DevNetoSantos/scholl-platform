@@ -14,8 +14,10 @@ model Studenty {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
 
-  name      String
-  sobrenome String
+  name String
+  cpf  String @unique
+  city String
+  year String
 
   role Role @default(USER)
 
@@ -29,8 +31,9 @@ model Teacher {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
 
-  name      String
-  sobrenome String
+  name     String
+  cpf      String @unique
+  graduate String
 
   role Role @default(ADMIN)
 
@@ -43,7 +46,7 @@ model Teacher {
 model User {
   id Int @id @default(autoincrement())
 
-  email    String
+  email    String @unique
   password String
 
   Studenty Studenty?
