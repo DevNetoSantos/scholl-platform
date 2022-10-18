@@ -23,6 +23,18 @@ export class UserService {
     return users;
   }
 
+  async findByEmail(email: string) {
+    return await this.prisma.user.findUnique({
+      where: {
+        email
+      },
+      include: {
+        Studenty: true,
+        Teacher: true
+      }
+    });
+  }
+
   findOne(id: number) {
     return `This action returns a #${id} user`;
   }
