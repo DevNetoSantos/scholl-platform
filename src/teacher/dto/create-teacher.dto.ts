@@ -1,4 +1,4 @@
-export class CreateStudentyDto {
+export class CreateTeacherDto {
   id?: number;
   name: string;
   sobrenome: string;
