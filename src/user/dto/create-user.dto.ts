@@ -1,5 +1,8 @@
-export class CreateUserDto {
+import { User } from "../entity/user.entity";
+
+export class CreateUserDto extends User{
   id?: number;
-  name: string;
-  sobrenome: string;
+  email: string;
+  password: string;
+  role: string;
 }
