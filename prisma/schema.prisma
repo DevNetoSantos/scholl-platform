@@ -11,44 +11,30 @@ datasource db {
 }
 
 model Studenty {
-  id                Int      @id @default(autoincrement())
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
-  name              String
-  email             String   @unique
-  password          String
-  cpf               String   @unique
-  date_birth        String
-  phone             String
-  city              String
-  state             String
-  series            String
-  shift             String
-  responsible_name  String
-  responsible_email String   @unique
-  responsible_phone String
-  role              Role     @default(USER)
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+
+  name      String
+  sobrenome String
+
+  role Role @default(USER)
+
+  login login?
 
   @@map("studentys")
 }
 
-model Teacher {
-  id              Int      @id @default(autoincrement())
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  name            String
-  email           String
-  password        String
-  cpf             String
-  city            String
-  state           String
-  speacialization String
-  role            Role     @default(ADMIN)
+model login {
+  id Int @id @default(autoincrement())
 
-  @@map("teachers")
+  email    String
+  password String
+
+  studenty   Studenty @relation(fields: [studentyId], references: [id])
+  studentyId Int      @unique
+
 }
 
 enum Role {
   USER
-  ADMIN
 }
