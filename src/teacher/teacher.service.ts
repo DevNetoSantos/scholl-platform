@@ -27,7 +27,8 @@ export class TeacherService {
     await this.prisma.teacher.create({
       data: {
         name: data.name,
-        sobrenome: data.sobrenome,
+        cpf: data.cpf,
+        graduate: data.graduate,
         user: {
           create: {
             email: data.email,

@@ -27,7 +27,9 @@ export class StudentyService {
     await this.prisma.studenty.create({
       data: {
         name: data.name,
-        sobrenome: data.sobrenome,
+        cpf: data.cpf,
+        city: data.city,
+        year: data.year,
         user: {
           create: {
             email: data.email,
