@@ -11,7 +11,7 @@ Aas made in the simplest way possible following the documentation of the respect
 The project was implemented JWT Authentication, Authorization with USER access for Students and ADMIN for Teachers.
 
 # technologies used
-- Modejs
+- Nodejs
 - Nestjs
 - Mysql
 - Typescript
