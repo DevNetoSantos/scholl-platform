@@ -32,19 +32,18 @@ The project was implemented JWT Authentication, Authorization with USER access f
 
 # technologies used
 - nodejs
-- NestJS
+- Nestjs
 - Mysql
 - typescript
 - prisma
 
-## Stay in touch
-
-# database modeling
+# Database modeling
 Database contains three tables. User, Student and Teacher, they have a one-to-one relationship. Teacher and Student tables store their entities and User table stores authentication data for both Teacher and Stydenty tables.
 
 ![db](https://user-images.githubusercontent.com/89228679/196759230-fdcd9b44-da2f-4ebf-b739-41ff4bb9c597.png)
 
 
+## Stay in touch
 
 - Author - [santosneto_](https://www.instagram.com/santosneto_/)
 - Website - [https://devnetosantos.vercel.app/](https://devnetosantos.vercel.app/)
