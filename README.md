@@ -1,32 +1,50 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# backend basic CRUD
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# About Project
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This is a Backend application, built for study purposes.
 
-## Description
+Application and summarized in a basic CRUD by three modules, User, Student and Teacher. where we can create, edit, list and delete each entity.
 
-Developing backend of a scholl platform
+Aas made in the simplest way possible following the documentation of the respective technologies mentioned below, to facilitate the reader's understanding.
+
+The project was implemented JWT Authentication, Authorization with USER access for Students and ADMIN for Teachers.
+
+# Endpoints by modules
+
+## Studenty
+- create Studenty
+- find all Studenty
+- find one Stydenty
+- delete Studenty
+- update Studenty
+
+## Teacher
+- create Teacher
+- find all Teacher
+- find one Teacher
+- delete Teacher
+- update Teacher
+
+## User
+- Find all users
+- findByEmail
+
+# technologies used
+- nodejs
+- NestJS
+- Mysql
+- typescript
+- prisma
 
 ## Stay in touch
+
+# database modeling
+Database contains three tables. User, Student and Teacher, they have a one-to-one relationship. Teacher and Student tables store their entities and User table stores authentication data for both Teacher and Stydenty tables.
+
+![db](https://user-images.githubusercontent.com/89228679/196759230-fdcd9b44-da2f-4ebf-b739-41ff4bb9c597.png)
+
+
 
 - Author - [santosneto_](https://www.instagram.com/santosneto_/)
 - Website - [https://devnetosantos.vercel.app/](https://devnetosantos.vercel.app/)
