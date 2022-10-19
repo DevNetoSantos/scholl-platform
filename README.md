@@ -10,32 +10,12 @@ Aas made in the simplest way possible following the documentation of the respect
 
 The project was implemented JWT Authentication, Authorization with USER access for Students and ADMIN for Teachers.
 
-# Endpoints by modules
-
-## Studenty
-- create Studenty
-- find all Studenty
-- find one Stydenty
-- delete Studenty
-- update Studenty
-
-## Teacher
-- create Teacher
-- find all Teacher
-- find one Teacher
-- delete Teacher
-- update Teacher
-
-## User
-- Find all users
-- findByEmail
-
 # technologies used
-- nodejs
+- Modejs
 - Nestjs
 - Mysql
-- typescript
-- prisma
+- Typescript
+- Prisma
 
 # Database modeling
 Database contains three tables. User, Student and Teacher, they have a one-to-one relationship. Teacher and Student tables store their entities and User table stores authentication data for both Teacher and Stydenty tables.
