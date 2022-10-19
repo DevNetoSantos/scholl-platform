@@ -1,6 +1,6 @@
-# backend basic CRUD
+# Backend basic CRUD
 
-# About Project
+# About project
 
 This is a Backend application, built for study purposes.
 
