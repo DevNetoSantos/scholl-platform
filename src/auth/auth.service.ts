@@ -13,7 +13,7 @@ export class AuthService {
     private jwtService: JwtService
     ) {}
 
-  login(user: User): UserToken {
+  async login(user: User): Promise<UserToken> {
     // transforma user em JWT
     const payload: UserPayload = {
       email: user.email,
@@ -33,10 +33,7 @@ export class AuthService {
       const isPasswordValid = await bcrypt.compareSync(password, user.password);
 
       if(isPasswordValid) {
-        return {
-          ...user,
-          password: undefined
-        };
+        return {...user.Studenty, ...user.Teacher}
       }
     }
 
